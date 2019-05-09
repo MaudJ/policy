@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<!-- Linking JavaScript file -->
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <!-- Font  -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+	<!-- css -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" href="./css/slider.css">
+	<link rel="stylesheet" href="./css/button.css">
+	<link rel="stylesheet" href="./css/radio.css">
+	<link rel="stylesheet" href="./css/background_image.css">
+	<link rel="stylesheet" href="./css/scroll.css">
+	<link rel="stylesheet" href="./css/table.css">
+
+	<!-- js -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script type="text/javascript" src="./js/home.js"></script>
+	<script type="text/javascript" src="./js/appear.js"></script>
+	<script src="https://d3js.org/d3.v5.min.js"></script>
+	<script src="https://d3js.org/topojson.v1.min.js"></script>
+
+	<!-- visualization -->
+	<script type="text/javascript" src="./js/map.js"></script>
+	<script type="text/javascript" src="./js/flights.js"></script>
+	<script type="text/javascript" src="./js/seats.js"></script>
+	<script type="text/javascript" src="./js/airportDivert.js"></script>
+	<script type="text/javascript" src="./js/supply_demand_chart.js"></script>
+	<script type="text/javascript" src="./js/passengers.js"></script>
+	<script type="text/javascript" src="./js/profit_chart.js"></script>
+	<script type="text/javascript" src="./js/building.js"></script>
+	<script>
+	</script>
+	
+	<style>
+		body, html {
+			height: 100%;
+			margin: 0;
+			font-family: 'Montserrat', sans-serif;
+			color: #777;
+		}
+
+		.title_text{
+			background-color: #111;
+			color: #fff;
+			padding: 20px;
+			margin-left: 20%;
+			margin-right: 20%;
+		}
+
+		.title_header{
+			margin-bottom: 20px
+		}
+
+		.subsection_card{
+			color: #A6A6A6;
+			text-align:center;
+		}
+
+		.black_bg{
+			background-color: black;
+			transition: 0.3s;
+		}
+
+		.white_bg{
+			background-color: #DFDFDF;
+			transition: 0.3s;
+		}
+
+		.white_bg:hover, .black_bg:hover{
+			background-color: #737373;
+			color: #880000;
+		}
+
+		.white_bg:active, .black_bg:active{
+			border-style: solid;
+			border-width: 15px;
+			border-color: #880000;
+		}
+
+		.footer {
+			position: fixed;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			color: white;
+			text-align: right;
+			height: 10%
+		}
+
+		.black_gray_bg {
+			background-image: -webkit-gradient(linear, left top, left bottom, from(#000), to(#000));
+			background-image: -webkit-linear-gradient(top, #000, #000);
+			background-image: -o-linear-gradient(top, #000, #000);
+			background-image: linear-gradient(to bottom, #000, #000);
+			color: #e3e3e3;
+			padding-top: 100px;
+			padding-bottom: 100px;
+		}
+
+		.gray_black_bg {
+			background-image: -webkit-gradient(linear, left top, left bottom, from(#000), to(#000));
+			background-image: -webkit-linear-gradient(top, #000, #000);
+			background-image: -o-linear-gradient(top, #000, #000);
+			background-image: linear-gradient(to bottom, #000, #000);
+			color: #e3e3e3;
+			padding-top: 100px;
+			padding-bottom: 100px;
+		}
+
+		.closer_bg {
+			background-color: #000;
+			color: #e3e3e3;
+			padding-top: 100px;
+			padding-bottom: 100px;
+		}
+
+		#passenger_seat_intro{
+			background-color: #E2E2E2;
+			color: #000;
+			padding-top: 100px;
+			padding-bottom: 100px;
+		}
+
+		.step {
+			color: white;
+			display: block;
+            opacity: 0.3;
+			height: 100% !important;
+            padding-top: 10%;
+            -webkit-transition: max-height 0.8s;
+            -moz-transition: max-height 0.8s;
+            transition: max-height 0.8s;
+		}
+
+		.step.is-active {
+			opacity: 1;
+		}
+
+		.timeline_left{
+			border-right-style: solid;
+		}
+
+        .timeline_step{
+            padding-top: 20%;
+        }
+
+		.changes_intro_loc {
+			position: absolute;
+			left: 0;
+			top: 17%;
+		}
+
+		.changes_intro_text {
+			text-align: center;
+			background-color:#fff;
+			opacity:0.6;
+			color:#000;
+			padding: 2%;
+		}
+
+	</style>
+</head>
+
+<body>
+	<div class="title_image" id="top">
+		<div class="caption">
+			<div class="title_text">
+				<div class="title_header" style="letter-spacing: 10px;">
+					<h1>INDOOR POSITIONING BASED ON WIFI FINGERPRINTING</h1>
+				</div>
+
+				<div class="title_context" style="letter-spacing: 5px;">
+					Chen Chen | Chongjiao Jiang
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Quick links -->
+	<div class="container-fluid h-50">
+		<div class="row h-100">
+			<div class="col-md-4 d-flex justify-content-center align-items-center subsection_card black_bg" id="section1">
+				<h2>Overview</h2>
+			</div>
+	        <div class="col-md-4 d-flex justify-content-center align-items-center subsection_card white_bg" id="section2">
+				<h2>Methods</h2>
+			</div>
+	        <div class="col-md-4 d-flex justify-content-center align-items-center subsection_card black_bg" id="section3">
+				<h2>Conclusion</h2>
+			</div>
+		</div>
+	</div>
+
+	<div class="happen_title" id="section1_start">
+		<div class="caption">
+			<span class="border">Overview</span>
+		</div>
+	</div>
+
+	<div class="black_gray_bg">
+        <div class="scroll__title_map section_title">
+            Indoor Locationing
+        </div>
+
+		<div class="scroll__figure_map">
+			<div id="buildingGraph" >
+				<script>
+function test(){
+var radios = document.getElementsByName('method');
+var name;
+for (var i = 0, length = radios.length; i < length; i++)
+{
+ if (radios[i].checked)
+ {
+  name = radios[i].id;
+  break;
+ }
+}
+return name;}
+</script>
+
+<script>
+function createRandom(){
+var seed =Math.floor(Math.random() * 1000) 
+return seed;}
+var seed = createRandom();
+</script>
+<script type="text/javascript">var svg_buildings = chart(1,3);</script>
+<script>function test1(){
+seed = updateBuilding(svg_buildings,test(),-1);
+} </script>
+<form id="method_btns">
+<input type="radio" class="method_btn" name="method" id="SVM" onclick="updateBuilding(svg_buildings,test(),seed)">SVM</button>
+<input type="radio" class="method_btn" name="method" id="FFN" onclick="updateBuilding(svg_buildings,test(),seed)">FFN</button>
+		<input type="radio" class="method_btn" name="method" id="DT" onclick="updateBuilding(svg_buildings,test(),seed)">DT</button>
+				<input type="radio" class="method_btn" name="method" id="KNN" onclick="updateBuilding(svg_buildings,test(),seed)">KNN</button>		
+				<input type="radio" class="method_btn" name="method" id="SAE" onclick="updateBuilding(svg_buildings,test(),seed)">SAE</button>
+				<input type="radio" class="method_btn" name="method" id="correct" onclick="updateBuilding(svg_buildings,test(),seed)">Correct</button>
+				
+</form>
+<button onclick="test1()">Receive Wifi Signal</button>
+
+
+<!-- 				<div class="row" >
+					<div class="col-md-12">
+						<h3>Time(EST): <span id="show_time">0:00-1:00</span></h3>
+					</div>
+				</div> -->
+<!-- 				<div class="row" >
+					<div class="col-md-8">
+						<input class="slider" id="slider" type="range" min="0" max="23" value="0" step = "1"/>
+					</div>
+					<div class="col-md-4">
+						<button class="button" id="minus"><</button>
+						<button class="button" id="add">></button>
+					</div>
+				</div> -->
+			</div>
+		</div>
+
+
+<!-- 		<div class='scroll__text_map'>
+            <div class="row" style="padding-top:5%; padding-bottom:5%">
+                <div class="col-md-6 timeline_left" style="text-align:right">
+                    <div class="col-md-12">
+                        <h3>7:59 am - </h3>
+                        <p>American Airlines Flight 11, takes off from Boston's Logan International Airport carring 92 people. The plane is orginally enroute to Los Angeles.</p>
+                    </div>
+                    <div class="col-md-12 timeline_step">
+                        <h3>8:19 am - </h3>
+                        <p>Ground personnel contact FBI indicating AA Flight 11 has been hijacked.</p>
+                    </div>
+                    <div class="col-md-12 timeline_step">
+                        <h3>9:03 am - </h3>
+                        <p>Hijackers crash United Airlines Flight 175 into floors 75-85 of the WTC’s South Tower, killing everyone on board and hundreds inside the building</p>
+                    </div>
+                    <div class="col-md-12 timeline_step">
+                        <h3>9:42 am - </h3>
+                        <p>The FAA ground all flights over the continental US. This forces 3,300 commericial, and 1,200 private flights to be grounded in US and Canada.</p>
+                    </div>
+                    <div class="col-md-12 timeline_step">
+                        <h3>10:28 am - </h3>
+                        <p>The World Trade Center’s North Tower collapses.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 timeline_right" >
+                    <div class="col-md-12 timeline_step" style="padding-top:40%">
+                        <h3> - 8:14 am</h3>
+                        <p>United Airlines Flight 175, a Boeing 767 with 65 people aboard, takes off from Boston; it is also headed to Los Angeles.</p>
+                    </div>
+                    <div class="col-md-12 timeline_step">
+                        <h3> - 8:46 am</h3>
+                        <p>Mohammed Atta and the other hijackers aboard American Airlines Flight 11 crash the plane into floors 93-99 of the North Tower of the World Trade Center, killing everyone on board and hundreds inside the building.</p>
+                    </div>
+                    <div class="col-md-12 timeline_step">
+                        <h3> - 9:08 am</h3>
+                        <p>The FAA bans all takeoffs of flights going to New York City or through the airspace around the city.</p>
+                    </div>
+                    <div class="col-md-12 timeline_step">
+                        <h3> - 9:59 am</h3>
+                        <p>The South Tower of the World Trade Center collapses.</p>
+                    </div>
+                </div>
+            </div>
+		</div> -->
+
+<div class='scroll__text_sd_chart'>
+			<div class='step' id="sd_chart_1">
+				<h3>Choose your favourite machine learning method, receive WIFI signal and get your location!</h3>
+               			<p>Indoor position information is becoming more and more important in our daily life, its
+application including tracking and monitoring of patients in the hospital, navigating in
+ complex shopping plaza. However, GPS is less accurate when the space is not
+ relatively empty or the high-rise buildings are dense. Therefore, wireless indoor
+ positioning technology has developed rapidly. Especially, localization technique based
+ on WIFI fingerprinting has attracted much attention due to its wide deployment and low cost. <br><br>
+In this project, we will develop a indoor positioning system based on the UJIIndoorLoc
+ database and hopefully it can successful migrate to any newly-collected dataset. In
+ order to do that, several machine learning algorithms would be tested, combined and
+ improved to solve the indoor localization problem using a WLAN fingerprint-based
+ method. </p>
+
+			</div>
+		</div>
+
+
+
+	</div>
+
+	<div class="gray_black_bg">
+        <div class='scroll__title_flight' id="flight_0">
+			<h2>Comparision of Methods</h2>
+		</div>
+
+		<div class="scroll__figure_flight">
+			<img src="https://raw.githubusercontent.com/MaudJ/policyFinal/master/rate.png" 
+			width="700" height="415" alt="Italian Trulli">
+
+
+
+ 			<!-- <table style="width:50%">
+  <tr>
+    <th></th>
+    <th>Longitude rmse</th> 
+    <th>Latitude rmse</th>
+    <th>Floor error rate</th>
+    <th>Building error rate</th>
+  </tr>
+  <tr>
+  	<th>KNN</th>
+    <td>Jill</td>
+    <td>Smith</td> 
+    <td>50</td>
+    <td>50</td>
+  </tr>
+   <tr>
+  	<th>DT</th>
+    <td>Jill</td>
+    <td>Smith</td> 
+    <td>50</td>
+    <td>50</td>
+  </tr>
+   <tr>
+  	<th>SVM</th>
+    <td>Jill</td>
+    <td>Smith</td> 
+    <td>50</td>
+    <td>50</td>
+  </tr>
+   <tr>
+  	<th>FFN</th>
+    <td>Jill</td>
+    <td>Smith</td> 
+    <td>50</td>
+    <td>50</td>
+  </tr>
+   <tr>
+  	<th>SAE</th>
+    <td>Jill</td>
+    <td>Smith</td> 
+    <td>50</td>
+    <td>50</td>
+  </tr>
+
+</table> -->
+		</div>
+
+		<div class="scroll__text_flight">
+			<div class='step' id="flight_1">
+				<h3>Massive flight cancellation during following days</h3>
+				<p>The day of 911, all US domestic flights were cancelled or diverted.
+                    Civilian air traffic would not resume for 3 days. A total of about 4,000
+                    flights were asked to grounded immediately. All airports were required to
+                    take in as many planes as possible.
+                </p>
+			</div>
+		</div>
+	</div>
+	</div>
+
+
+	<div class="changes_title" id="section2_start">
+		<div class="caption">
+			<span class="border">Methods</span>
+		</div>
+	</div>
+
+
+
+	<div class="black_gray_bg">
+		<!-- Airport Diversion -->
+        <div class='scroll__title_airportDivert' id="airport_divert_0">
+			<h2>Support Vector Machine</h2>
+		</div>
+
+		<div class='scroll__figure_airportDivert'>
+			<img src="https://raw.githubusercontent.com/MaudJ/policyFinal/master/SVM.png" 
+			width="700" height="415" alt="Italian Trulli">
+		</div>
+
+		<div class='scroll__text_airportDivert' >
+			<div class='step' id="airport_divert_1" >
+				<!-- <h3>Larger airport were easier targets for terrorist</h3> -->
+				<!-- <p>During the 911 attack, hijackers boarded to target flights from BOS,
+                    EWR, and IAD, where both of them are internationally known large airports.
+                    These large airports, which handle millions of people each day, make it
+                    harder to detect potential attacks and thus more vulnerable to terrorist
+                    attacks, including active shooters, luggage filled with explosives,
+                    weaponized drones, and vehicle ramming, than small and medium-sized airports. </p>
+ -->
+                   <p> Support-vector machines (SVMs, also support-vector networks) are 
+supervised learning models with associated learning algorithms that 
+analyze data used for classification and regression analysis. Given a set 
+of training examples, each marked as belonging to one or the other of 
+two categories, an SVM training algorithm builds a model that assigns 
+new examples to one category or the other, making it a non-
+probabilistic binary linear classifier.</p>
+
+
+			</div>
+<!-- 			<div class='step' id="airport_divert_2">
+				<h3>Diverting planes from large size airports to decrease "hubs"</h3>
+				<p>Before 911, domestic flights were mostly departed from large-sized airports.
+                    Then after 911 attack, this pattern had changed due to security issues,
+                    as the percentage of the total number of flights departed from
+                    large-sized airports dropped, and more service was offered
+                    to flights departed from medium-sized and small-sized airports. </p>
+			</div> -->
+		</div>
+	</div>
+
+	<div class="gray_black_bg">
+
+        <div class='scroll__title_sd_chart' id="sd_chart_0">
+			<h2>Feed-forward Neural Network</h2>
+		</div>
+		<!-- Supply and demand chart -->
+		<div class='scroll__figure_sd_chart'>
+			<img src="https://raw.githubusercontent.com/MaudJ/policyFinal/master/FFN.png" 
+			width="700" height="415" alt="Italian Trulli">
+		</div>
+
+		<div class='scroll__text_sd_chart2'>
+			<div class='step' id="sd_chart_2">
+				<!-- <h3>Both Supply and Demand dropped dramatically after 911 and slowly rebounded.</h3> -->
+				<p>A feedforward neural network is an artificial neural network wherein 
+connections between the nodes do not form a cycle. As such, it is 
+different from recurrent neural networks. The feedforward neural 
+network was the first and simplest type of artificial neural network 
+devised. In this network, the information moves in only one direction, 
+forward, from the input nodes, through the hidden nodes (if any) and 
+to the output nodes. There are no cycles or loops in the network.
+
+               			</p>
+			</div>
+		</div>
+
+	</div>
+
+
+<div class="black_gray_bg">
+		<!-- Airport Diversion -->
+        <div class='scroll__title_airportDivert' id="airport_divert_2">
+			<h2>Decision Tree</h2>
+		</div>
+
+		<div class='scroll__figure_airportDivert'>
+			<img src="https://raw.githubusercontent.com/MaudJ/policyFinal/master/DT.png" 
+			width="700" height="415" alt="Italian Trulli">
+		</div>
+
+		<div class='scroll__text_airportDivert' >
+			<div class='step' id="airport_divert_3" >
+<!-- 				<h3>Larger airport were easier targets for terrorist</h3>
+ -->				<p>In computer science, Decision tree learning uses a decision tree (as a 
+predictive model) to go from observations about an item (represented 
+in the branches) to conclusions about the item's target value 
+(represented in the leaves). It is one of the predictive modeling 
+approaches used in statistics, data mining and machine learning. Tree 
+models where the target variable can take a discrete set of values are 
+called classification trees; in these tree structures, leaves represent 
+class labels and branches represent conjunctions of features that lead 
+to those class labels. Decision trees where the target variable can take 
+continuous values (typically real numbers) are called regression trees.
+ </p>
+			</div>
+<!-- 			<div class='step' id="airport_divert_2">
+				<h3>Diverting planes from large size airports to decrease "hubs"</h3>
+				<p>Before 911, domestic flights were mostly departed from large-sized airports.
+                    Then after 911 attack, this pattern had changed due to security issues,
+                    as the percentage of the total number of flights departed from
+                    large-sized airports dropped, and more service was offered
+                    to flights departed from medium-sized and small-sized airports. </p>
+			</div> -->
+		</div>
+	</div>
+
+	<div class="gray_black_bg">
+
+        <div class='scroll__title_sd_chart' id="sd_chart_4">
+			<h2>K Nearest Neighbors</h2>
+		</div>
+		<!-- Supply and demand chart -->
+		<div class='scroll__figure_sd_chart'>
+			<img src="https://raw.githubusercontent.com/MaudJ/policyFinal/master/knn.png" 
+			width="700" height="415" alt="Italian Trulli">
+		</div>
+
+		<div class='scroll__text_sd_chart2'>
+			<div class='step' id="sd_chart_3">
+				<!-- <h3>Both Supply and Demand dropped dramatically after 911 and slowly rebounded.</h3> -->
+				<p>K-Nearest Neighbors (KNN) is one of the simplest algorithms used in 
+Machine Learning for regression and classification problem. KNN 
+algorithms use a data and classify new data points based on a similarity 
+measures (e.g. distance function). Classification is done by a majority 
+vote to its neighbors. The data is assigned to the class which has the 
+most nearest neighbors. As you increase the number of nearest 
+neighbors, the value of k, accuracy might increase.
+
+               			</p>
+			</div>
+		</div>
+
+	</div>
+
+	<div class="black_gray_bg">
+		<!-- Airport Diversion -->
+        <div class='scroll__title_airportDivert' id="airport_divert_4">
+			<h2>Stacked Autoencoder</h2>
+		</div>
+
+		<div class='scroll__figure_airportDivert'>
+			<img src="https://raw.githubusercontent.com/MaudJ/policyFinal/master/SAE.png" 
+			width="700" height="415" alt="Italian Trulli">
+		</div>
+
+		<div class='scroll__text_airportDivert' >
+			<div class='step' id="airport_divert_5" >
+				<!-- <h3>Larger airport were easier targets for terrorist</h3> -->
+				<p>A stacked autoencoder is a neural network consisting of multiple layers 
+of sparse autoencoders in which the outputs of each layer is wired to 
+the inputs of the successive layer. Autoencoders can be "stacked" in a 
+greedy layerwise fashion for pretraining (initializing) the weights of a 
+deep network.
+ </p>
+			</div>
+<!-- 			<div class='step' id="airport_divert_2">
+				<h3>Diverting planes from large size airports to decrease "hubs"</h3>
+				<p>Before 911, domestic flights were mostly departed from large-sized airports.
+                    Then after 911 attack, this pattern had changed due to security issues,
+                    as the percentage of the total number of flights departed from
+                    large-sized airports dropped, and more service was offered
+                    to flights departed from medium-sized and small-sized airports. </p>
+			</div> -->
+		</div>
+	</div>
+
+
+
+	<div class="closer_title" id="section3_start">
+		<div class="caption">
+			<span class="border">Conclusion</span>
+		</div>
+	</div>
+
+<!-- 	<div class="black_gray_bg">
+			<div class="scroll__title_pass_seat" style="text-align: center;">
+                <h3>To get a closer look,</h3>
+                We were also interested in studying how individual companies were
+                affected with 911. We first studied how individual companies changed
+                their supply to accommodate the changes in consumer trust. Then
+                we analyze how the profits were affected in the following years.
+
+				<br /><br />We found something interesting.
+			</div>
+	</div> -->
+
+	<div class="black_gray_bg">
+        <div class='scroll__title_pass_seat' id="pass_seat_0">
+            <h3></h3>
+            <p>
+            </p>
+		</div>
+
+       <!--  <div class='scroll__figure_pass_seat'>
+			<div class="col-md-6 d-flex align-items-center flex-column" >
+                <div id="passengers"></div>
+                <div id="seats"></div>
+			</div>
+		</div>
+
+		<div class='scroll__figure_pass_seat'>
+			<div class="col-md-6 d-flex align-items-center flex-column" >
+				<div class="row d-flex align-items-center justify-content-center">
+					<div id="passengers"></div>
+				</div>
+
+				<div class="row d-flex align-items-center justify-content-center">
+					<div id="seats"></div>
+				</div>
+			</div>
+		</div> -->
+
+		<div class='scroll__text_pass_seat'>
+			<div class='step' id="pass_seat_1" style="padding-bottom:40%; ">
+				<h3>Growth in AA's supply and demand not expected.</h3>
+				<p>After 911 attack,all airline companies had their number of
+					passengers and seats decreased to varying degrees except AA.
+					Actually AA made a great jump in the number of both passengers
+					and seats, which seems strange considering that AA was
+					directly involved in 911. We later took a look at AA's
+					revenue report around 2001 and found the possible reason.</p>
+			</div>
+
+			<!-- <div class='step' id="pass_seat_2" style="padding-bottom:-75%">
+				<h3>US Airways disproportionately affected</h3>
+				<p>US Airways experienced a severe and long-lasting decrease
+					in number of both passengers and seats. US Airways was
+					the largest airline company at Washington National Airport
+					which was directly involved in 911 attack. After the
+					attack, Bush administration shut the airport down
+					indefinitely and it was closed for more than 3 weeks.
+					It accelerated the financial crisis of US Airways and
+					resulted in the closure of the airline's MetroJet network,
+					which was an important reason for US Airways's bankruptcy.</p>
+			</div> -->
+		</div>
+	</div>
+
+	<!-- Closer look profits -->
+<!-- 	<div class="gray_black_bg">
+
+        <div class='scroll__title_profit' id="profit_0">
+            <h3>Profits</h3>
+		</div>
+
+        <div class='scroll__figure_profit'>
+            <div id="profit_chart">
+                  <form id="company_btn">
+                    <input type="radio" id="company_btn1" name="company" value="AA" checked="checked">
+                    <LABEL>AA</LABEL>
+                    <input type="radio" id="company_btn2" name="company" value="UA">
+                    <LABEL>UA</LABEL>
+                    <input type="radio" id="company_btn3" name="company" value="Delta">
+                    <LABEL>DL</LABEL>
+                    <input type="radio" id="company_btn4" name="company" value="SW">
+                    <LABEL>SW</LABEL>
+                  </form>
+            </div>
+		</div>
+
+		<div class='scroll__text_profit'>
+			<div class='step' id="profit_1" style="padding-bottom:40%;">
+				<h3>AA declared bankruptcy, due to poor purchases and post 911 travel scare </h3>
+				<p>AA had a badly timed purchase of Trans World Airlines Inc.
+                    In April 2001 came just as the U.S. economy was beginning to slow,
+                    a decline that became much steeper after the Sept. 11, 2001,
+                    terrorist attacks. The aftermath of Sept. 11 left the industry
+                    and American reeling as the number of people traveling plummeted
+                    and spent the first half of the decade skirting Bankruptcy Court.
+                    Similarly, other airlines such as UA, Delta, Northwest, though
+                    some of them are not directly involved with 911, have filed for
+                    bankruptcy starting in 2002 to stay alive.
+                </p>
+			</div>
+
+            <div class='step' id="profit_2" >
+				<h3>Low budget airlines, Southwest Airlines, were able to maintain profits over the years</h3>
+				<p>The impact of 911 was indeed a catalyst for major airline companies’
+                    bankruptcies. However, after looking at the stats for Southwest
+                    Airlines, we are further confirmed that a strong recovery from
+                    911 was possible and that the companies who suffered from
+                    economic misery after 911 were mostly due to some extent of
+                    poor management. Delta, Northwest, AA and UA emerged from bankruptcy
+                    a few years later with lower pay and benefits for employees,
+                    trimmer workforces and often with better terms on airplanes,
+                    facilities and debt, successfully rebounded to make stable
+                    profits after 2010.
+                </p>
+			</div>
+		</div>
+	</div> -->
+
+
+	<div class="footer">
+		<div class="row d-flex justify-content-end h-100">
+			<div class="col-md-1 black_bg h-100 d-flex justify-content-center align-items-center"
+				id="to_head">
+				TOP
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

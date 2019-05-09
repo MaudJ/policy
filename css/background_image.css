@@ -1,0 +1,49 @@
+.title_image, .happen_title, .changes_title, .changes_intro, .closer_title{
+    position: relative;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.title_image {
+    background-image: url("../img/title.png");
+    min-height: 100%;
+}
+
+.happen_title {
+    background-image: url("../img/buildings.png");
+    min-height: 100%;
+}
+
+.changes_title {
+    background-image: url("../img/security.png");
+    min-height: 100%;
+}
+
+.changes_intro {
+    background-image: url("../img/911_conclusion.png");
+    min-height: 100%;
+}
+
+.closer_title {
+    background-image: url("../img/closer_look.png");
+    min-height: 100%;
+}
+
+.caption {
+    position: absolute;
+    left: 0;
+    top: 37%;
+    width: 100%;
+    color: #000;
+    text-align: center;
+}
+
+.caption span.border {
+    background-color: #111;
+    color: #fff;
+    padding: 20px;
+    font-size: 25px;
+    letter-spacing: 10px;
+}

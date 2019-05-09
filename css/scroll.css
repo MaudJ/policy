@@ -1,0 +1,223 @@
+.section_title{
+	background-color: white;
+	padding: 0.2em;
+	width:35%;
+	margin-left:5%;
+	opacity: 0.5;
+	font-size: 30px;
+	color: black;
+}
+
+.scroll__title_map {
+	position: -webkit-sticky;
+	position: sticky;
+	right: 100%;
+	top: 2em;
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+	z-index: 100;
+}
+
+.scroll__figure_map {
+	position: -webkit-sticky;
+	position: sticky;
+	right: 100%;
+	top: 3em;
+	padding-left: 40em;
+	bottom: auto;
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+	z-index: 100;
+}
+
+.scroll__text_map {
+	width: 37%;
+	padding-left: 5%;
+	padding-top: 5%;
+	top: -30em;
+	position: relative;
+}
+
+
+.scroll__title_flight {
+	position: -webkit-sticky;
+	position: sticky;
+	right: 100%;
+	top: 3em;
+	padding-left: 10%;
+	padding-right: 10%;
+	bottom: auto;
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+	z-index: 999;
+	text-align: center;
+}
+
+.scroll__figure_flight {
+	position: -webkit-sticky;
+	position: sticky;
+	right: 100%;
+	top: 10em;
+	padding-left: 2%;
+	bottom: auto;
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+	z-index: 100;
+}
+
+.scroll__text_flight {
+	padding-top: 5%;
+	padding-left: 55em;
+	padding-right: 5em;
+	top: -15em;
+	position: relative;
+}
+
+
+.scroll__title_airportDivert {
+	position: -webkit-sticky;
+	position: sticky;
+	right: 100%;
+	top: 3em;
+	padding-left: 10%;
+	padding-right: 10%;
+	bottom: auto;
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+	z-index: 999;
+	text-align: center;
+}
+
+.scroll__figure_airportDivert {
+	position: -webkit-sticky;
+	position: sticky;
+	right: 100%;
+	top: 9em;
+	padding-left: 2%;
+	bottom: auto;
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+	z-index: 100;
+}
+
+.scroll__text_airportDivert {
+	padding-top: 5%;
+	padding-left: 55em;
+	padding-right: 5em;
+	top: -15em;
+	position: relative;
+}
+
+.scroll__title_sd_chart {
+	position: -webkit-sticky;
+	position: sticky;
+	right: 100%;
+	top: 3em;
+	padding-left: 10%;
+	padding-right: 10%;
+	bottom: auto;
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+	z-index: 999;
+	text-align: center;
+}
+
+.scroll__figure_sd_chart {
+	position: -webkit-sticky;
+	position: sticky;
+	right: 100%;
+	top: 8em;
+	padding-left: 40em;
+	bottom: auto;
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+	z-index: 100;
+}
+
+
+
+.scroll__text_sd_chart {
+	width: 37%;
+	padding-left: 5%;
+	padding-top: 5%;
+	top: -10em;
+	position: relative;
+}
+
+.scroll__text_sd_chart2 {
+	width: 37%;
+	padding-left: 5%;
+	padding-top: 5%;
+	top: -10em;
+	position: relative;
+}
+
+.scroll__title_pass_seat {
+	position: -webkit-sticky;
+	position: sticky;
+	right: 100%;
+	top: 0.5em;
+	padding-left: 10%;
+	padding-right: 10%;
+	bottom: auto;
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+	z-index: 999;
+	text-align: center;
+}
+
+.scroll__figure_pass_seat {
+	position: -webkit-sticky;
+	position: sticky;
+	right: 100%;
+	top: 8em;
+	padding-left: 2%;
+	bottom: auto;
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+	z-index: 100;
+}
+
+.scroll__text_pass_seat {
+	padding-top: 5%;
+	padding-left: 10em;
+	padding-right: 10em;
+	padding-bottom: 5%;
+	top: 0em;
+	position: relative;
+}
+
+
+.scroll__title_profit {
+	position: -webkit-sticky;
+	position: sticky;
+	right: 100%;
+	top: 5em;
+	padding-left: 10%;
+	padding-right: 10%;
+	bottom: auto;
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+	z-index: 999;
+	text-align: center;
+}
+
+.scroll__figure_profit {
+	position: -webkit-sticky;
+	position: sticky;
+	right: 100%;
+	top: 13em;
+	padding-left: 50em;
+	bottom: auto;
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+	z-index: 100;
+}
+
+.scroll__text_profit {
+	width:50%;
+	padding-top: 5%;
+	padding-left: 5em;
+	top: -7em;
+	position: relative;
+}
